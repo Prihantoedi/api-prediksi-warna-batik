@@ -3,7 +3,7 @@ from flask.globals import request
 from flask_cors import CORS
 from datetime import datetime
 import json
-import collection
+import collection as collection
 import tensorflow as tf
 
 
@@ -37,7 +37,8 @@ def prediction():
 
     inputData = [[normalize_fc_rgb, normalize_sc_rgb]]
 
-    model = tf.keras.models.load_model('C:/Personal File/code/sample-project/api-prediksi-warna-batik/model_simple_rnn/model_prediksi_warna.h5')
+    # model = tf.keras.models.load_model('C:/Personal File/code/sample-project/api-prediksi-warna-batik/model_simple_rnn/model_prediksi_warna.h5')
+    model = tf.keras.models.load_model('/model_simple_rnn/model_prediksi_warna.h5')
 
     real_hex_mix = collection.Collection.mixed_color_hex(color_pair)
 
