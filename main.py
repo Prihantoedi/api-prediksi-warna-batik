@@ -13,6 +13,9 @@ app.config['SECRET_KEY'] = 'abc12345'
 
 CORS(app, resources={r'/api/*' : {'origins' : '*'}})
 
+@app.route('/api/v1/source', methods=['GET'])
+def get_source():
+    return jsonify({'msg' : 'successfull get method!'})
 
 
 @app.route('/api/v1/predict', methods=['POST'])
